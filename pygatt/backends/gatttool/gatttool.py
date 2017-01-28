@@ -42,9 +42,9 @@ def at_most_one_device(func):
     connected device.
     """
     @functools.wraps(func)
-    def wrapper(self, connected_device, *args, **kwargs):
-        if connected_device != self._connected_device:
-            raise NotConnectedError()
+    def wrapper(self, *args, **kwargs):
+        #if connected_device != self._connected_device:
+        #    raise NotConnectedError()
         return func(self, *args, **kwargs)
     return wrapper
 
